@@ -21,7 +21,7 @@ class ObrigacaoRepository() {
 
 class ObrigacaoFacade() {
 
-    @Deprecated("Utilizar getBy(ano: Date)", ReplaceWith("getBy(ano)"))
+    @Deprecated("Utilizar getBy(ano: Date)", ReplaceWith("getBy(ano = ano)"))
     fun getByAno(ano: Date) = ObrigacaoRepository().get().filter { it.ano.compareTo(ano) == 0 }
 
     fun getBy(ano: Date) = ObrigacaoRepository().get().filter { it.ano.compareTo(ano) == 0 }
